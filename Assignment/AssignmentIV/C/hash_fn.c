@@ -16,12 +16,26 @@
 #include "hash_fn.h"
 
 int myHashInt(int key, int m) {
-    // TODO: replace with your own design
+
+    unsigned int x = (unsigned int) key;
+
+    x = ((x >> 16) ^ x) * 0x45d9f3b;
+    x = ((x >> 16) ^ x) * 0x45d9f3b;
+    x = (x >> 16) ^ x;
+
     return key % m;  // division method example
 }
 
 int myHashString(const char* str, int m) {
     unsigned long hash = 0;
     // TODO: replace with your own design
+
+    hash = 5381;
+    int c;
+
+    while ((c = *str++)) {
+        hash = ((hash << 5) + hash) + c;  // hash * 33 + c
+    }
+    
     return (int)(hash % m); // basic division method
 }
