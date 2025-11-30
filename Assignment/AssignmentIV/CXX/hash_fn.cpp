@@ -16,11 +16,23 @@
 
 int myHashInt(int key, int m) {
     // TODO: replace with your own design
+    unsigned int x = static_cast<unsigned int > (key);
+
+    x = ((x >> 16) ^ x) * 0x45d9f3b;
+    x = ((x >> 16) ^ x) * 0x45d9f3b;
+    x = (x >> 16) ^ x;
+
     return key % m;  // basic division method
 }
 
 int myHashString(const std::string& str, int m) {
     unsigned long hash = 0;
     // TODO: replace with your own design
+        hash = 5381;
+
+    for (char c : str) {
+        hash = ((hash << 5) + hash) + static_cast<unsigned long>(c);  // hash * 33 + c
+    }
+
     return static_cast<int>(hash % m);  // basic division method
 }
