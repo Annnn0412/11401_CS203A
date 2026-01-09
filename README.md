@@ -15,7 +15,7 @@
 - **Teaching Assistant:** To be announced
 - **Office Hours:**
   - **Monday** 14:00-16:00 (R1310)
-  - **Wednesday** 14:00–16:00 (R1310
+  - **Wednesday** 14:00–16:00 (R1310)
 
 ## Profile
 **Name:** 鍾和靜
